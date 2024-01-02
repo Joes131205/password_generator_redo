@@ -121,7 +121,10 @@ generatePasswordButton.addEventListener("click", function () {
         symbolEl.checked,
     ];
     if (currentSetting.every((item) => !item)) {
-        console.log("Bruh");
+        generatePasswordButton.style.backgroundColor = "#7a0002";
+        setTimeout(() => {
+            generatePasswordButton.style.backgroundColor = "#02a5ad";
+        }, 1000);
         return;
     }
     const currentLength = lengthEl.value;
@@ -138,14 +141,20 @@ generatePasswordButton.addEventListener("click", function () {
 });
 
 clipboardButton.addEventListener("click", function () {
+    if (passwordEl.textContent === "-") {
+        clipboardButton.style.backgroundColor = "#b85658";
+        setTimeout(() => {
+            clipboardButton.style.backgroundColor = "#636363";
+        }, 750);
+        return;
+    }
     navigator.clipboard.writeText(passwordEl.textContent);
-    clipboardButton.style.backgroundColor = "green";
+    clipboardButton.style.backgroundColor = "#47b34f";
     setTimeout(() => {
-        clipboardButton.style.backgroundColor = "white";
-    }, 1000);
+        clipboardButton.style.backgroundColor = "#636363";
+    }, 750);
 });
 
-lengthEl.addEventListener("onchange", function () {
-    console.log("Changed");
+lengthEl.addEventListener("input", function () {
     lengthText.textContent = lengthEl.value;
 });

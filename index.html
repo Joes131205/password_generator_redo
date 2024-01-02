@@ -3,51 +3,55 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Password Generator</title>
         <link rel="stylesheet" href="style.css" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/site.webmanifest" />
     </head>
     <body>
         <section class="section-category">
-            <p>Length</p>
+            <p>
+                <b>Length: <span id="lengthText">8</span></b>
+            </p>
             <div class="section-length">
-                <div class="numbers">
-                    <span>8</span><span>9</span><span>10</span><span>11</span
-                    ><span>12</span><span>13</span><span>14</span
-                    ><span>15</span>
-                </div>
-
                 <div class="slider">
-                    <span></span>
                     <input
                         type="range"
                         id="length"
                         min="8"
-                        max="15"
+                        max="48"
                         value="8"
                     />
-                    <span></span>
                 </div>
             </div>
 
-            <p>Settings</p>
+            <p><b>Settings</b></p>
 
             <div class="container-settings">
-                <label for="lowercase">
-                    Include Lowercases
-                    <input type="checkbox" id="lowercase" />
-                </label>
-                <label for="uppercase">
-                    Include Uppercases
-                    <input type="checkbox" id="uppercase" />
-                </label>
-                <label for="number">
-                    Include Numbers
-                    <input type="checkbox" id="number" />
-                </label>
-                <label for="symbol">
-                    Include Symbols
-                    <input type="checkbox" id="symbol" />
-                </label>
+                <input type="checkbox" id="lowercase" />
+                <label for="lowercase">Include Lowercases</label>
+                <input type="checkbox" id="uppercase" />
+                <label for="uppercase">Include Uppercases</label>
+                <input type="checkbox" id="number" />
+                <label for="number">Include Numbers</label>
+                <input type="checkbox" id="symbol" />
+                <label for="symbol">Include Symbols</label>
             </div>
         </section>
         <button id="generatePassword">Generate Password</button>
